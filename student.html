@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #library {
+            width: 80%;
+            margin: 0 auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="library">
+        <h1>Library Management System</h1>
+        <h2>Books</h2>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>ISBN</th>
+            </tr>
+            <tr>
+                <td>Book 1</td>
+                <td>Author 1</td>
+                <td>1234567890</td>
+            </tr>
+            <tr>
+                <td>Book 2</td>
+                <td>Author 2</td>
+                <td>0987654321</td>
+            </tr>
+            <!-- Add more book rows here -->
+        </table>
+        <h2>Student Portal</h2>
+        <form id="student-form">
+            <label for="student-name">Student Name:</label>
+            <input type="text" id="student-name" name="student-name" required>
+            <br>
+            <label for="book-title">Book Title:</label>
+            <input type="text" id="book-title" name="book-title" required>
+            <br>
+            <button type="submit" class="btn">Borrow Book</button>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript code for handling student borrowing goes here
+        document.getElementById('student-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const studentName = document.getElementById('student-name').value;
+            const bookTitle = document.getElementById('book-title').value;
+            // Add code here to handle the borrowing process (e.g., updating the database).
+            alert(`Student: ${studentName} borrowed book: ${bookTitle}`);
+            document.getElementById('student-name').value = '';
+            document.getElementById('book-title').value = '';
+        });
+    </script>
+</body>
+</html>
